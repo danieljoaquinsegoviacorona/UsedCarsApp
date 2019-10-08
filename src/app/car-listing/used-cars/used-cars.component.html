@@ -1,0 +1,45 @@
+<button
+  type="button"
+  class="btn btn-outline-primary"
+  (click)="showInsertForm()"
+>
+  Add Car
+</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Model</th>
+      <th scope="col">Year</th>
+      <th scope="col">Kilometers</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of carList">
+      <th scope="row">{{ car.id }}</th>
+      <td>{{ car.brand }}</td>
+      <td>{{ car.model }}</td>
+      <td>{{ car.year }}</td>
+      <td>{{ car.kilometers }}</td>
+      <td>{{ car.price }}</td>
+      <td>
+          <button
+          type="button"
+          class="btn btn-outline-primary"
+          (click)="showUpdateForm()"
+        >
+          UPDATE
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          (click)="deleteCar(car.id)"
+        >
+          DELETE
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
